@@ -1,5 +1,5 @@
 [project]
-name = "lightdash"
+name = "lightdash-game"
 version = "0.1.0"
 description = "A minimalist rhythm-based runner game built with Pygame"
 authors = [{ name="Priyanshu Raj", email="prmahatha@gmail.com" }]
