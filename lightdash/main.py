@@ -7,6 +7,10 @@ from pygame import mixer
 pygame.init()
 mixer.init()
 
+# Get path relative to this file (installed module)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ASSETS_DIR = os.path.join(BASE_DIR, "assets")
+
 # Screen setup
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -25,7 +29,7 @@ PARTICLE_COLOR = (255, 255, 255, 100)
 
 # Load background video frames
 bg_frames = []
-bg_folder = "assets/bg_frames"
+bg_folder = os.path.join(ASSETS_DIR, "bg_frames")
 for fname in sorted(os.listdir(bg_folder)):
     if fname.endswith(".png"):
         img = pygame.image.load(os.path.join(bg_folder, fname)).convert()
@@ -36,11 +40,12 @@ bg_frame_index = 0
 bg_frame_count = len(bg_frames)
 
 # Load sounds
-mixer.music.load("assets/sounds/bg_music.mp3")
+sound_dir = os.path.join(ASSETS_DIR, "sounds")
+mixer.music.load(os.path.join(sound_dir, "bg_music.mp3"))
 mixer.music.set_volume(0.5)
 mixer.music.play(-1)
 
-jump_sound = mixer.Sound("assets/sounds/jump.wav")
+jump_sound = mixer.Sound(os.path.join(sound_dir, "jump.wav"))
 jump_sound.set_volume(0.5)
 
 # Player setup

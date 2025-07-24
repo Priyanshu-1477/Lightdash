@@ -1,6 +1,6 @@
 [project]
 name = "lightdash-game"
-version = "0.1.0"
+version = "0.1.4"
 description = "A minimalist rhythm-based runner game built with Pygame"
 authors = [{ name="Priyanshu Raj", email="prmahatha@gmail.com" }]
 readme = "README.md"
@@ -13,6 +13,9 @@ lightdash = "lightdash.main:main"
 
 [tool.setuptools]
 include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
 
 [build-system]
 requires = ["setuptools", "wheel"]
